@@ -1,0 +1,24 @@
+semillero_index:
+    path:     /
+    defaults: { _controller: "UdecHomeBundle:Semillero:index" }
+    methods:  GET
+
+semillero_show:
+    path:     /{id}/show
+    defaults: { _controller: "UdecHomeBundle:Semillero:show" }
+    methods:  GET
+
+semillero_new:
+    path:     /new
+    defaults: { _controller: "UdecHomeBundle:Semillero:new" }
+    methods:  [GET, POST]
+
+semillero_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "UdecHomeBundle:Semillero:edit" }
+    methods:  [GET, POST]
+
+semillero_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "UdecHomeBundle:Semillero:delete" }
+    methods:  DELETE

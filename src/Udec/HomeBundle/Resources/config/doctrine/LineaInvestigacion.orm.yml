@@ -1,0 +1,24 @@
+Udec\HomeBundle\Entity\LineaInvestigacion:
+    type: entity
+    table: null
+    repositoryClass: Udec\HomeBundle\Repository\LineaInvestigacionRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    oneToMany:
+        semilleros:
+            targetEntity: Grupo
+            mappedBy: Semillero
+    manyToMany:
+        grupos:
+            targetEntity: Grupo
+            mappedBy: LineasInvestigacion
+
+    fields:
+        nombre:
+            type: string
+            length: '255'
+    lifecycleCallbacks: {  }

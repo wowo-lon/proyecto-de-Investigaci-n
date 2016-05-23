@@ -1,0 +1,24 @@
+lineainvestigacion_index:
+    path:     /
+    defaults: { _controller: "UdecHomeBundle:LineaInvestigacion:index" }
+    methods:  GET
+
+lineainvestigacion_show:
+    path:     /{id}/show
+    defaults: { _controller: "UdecHomeBundle:LineaInvestigacion:show" }
+    methods:  GET
+
+lineainvestigacion_new:
+    path:     /new
+    defaults: { _controller: "UdecHomeBundle:LineaInvestigacion:new" }
+    methods:  [GET, POST]
+
+lineainvestigacion_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "UdecHomeBundle:LineaInvestigacion:edit" }
+    methods:  [GET, POST]
+
+lineainvestigacion_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "UdecHomeBundle:LineaInvestigacion:delete" }
+    methods:  DELETE

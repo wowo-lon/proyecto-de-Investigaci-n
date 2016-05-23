@@ -1,0 +1,33 @@
+{% extends "::layout.html.twig" %}
+
+{% block contenido %}
+    <h1>Lista de Docentes</h1>
+
+    <a href="{{ path('user_new') }}" class="btn btn-primary">Crear Nuevo Docente</a>
+        
+    <table class="table table-responsive">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>DNI</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for user in users %}
+            <tr>
+                <td><a href="{{ path('user_show', { 'id': user.id }) }}">{{ user.id }}</a></td>
+                <td>{{ user.cedula }}</td>
+                <td>{{ user.nombre }}</td>
+                <td>{{ user.apellido }}</td>
+                <td>
+                    <a href="{{ path('user_show', { 'id': user.id }) }}" class="btn btn-info">Detalles</a>
+                    <a href="{{ path('user_edit', { 'id': user.id }) }}" class="btn btn-success">Editar</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

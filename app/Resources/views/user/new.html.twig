@@ -1,0 +1,13 @@
+{% extends '::layout.html.twig' %}
+
+{% block contenido %}
+    <h1>Nuevo Docente</h1>
+
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <input type="submit" class="btn btn-success" value="Registrar" />
+    {{ form_end(form) }}
+
+    <a href="{{ path('user_index') }}" class="btn btn-danger">Volver</a>
+    
+{% endblock %}

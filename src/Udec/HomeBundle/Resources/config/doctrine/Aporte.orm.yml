@@ -1,0 +1,28 @@
+Udec\HomeBundle\Entity\Aporte:
+    type: entity
+    table: null
+    repositoryClass: Udec\HomeBundle\Repository\AporteRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+
+    manyToOne:
+        proyecto:
+            targetEntity: Proyecto
+            mappedBy: aportes
+            joinColumn:
+                name: proyecto_id
+                referencedColumnName: id
+    fields:
+        titulo:
+            type: string
+            length: 255
+        resumen:
+            type: text
+        documento:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }

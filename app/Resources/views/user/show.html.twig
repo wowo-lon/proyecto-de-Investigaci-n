@@ -1,0 +1,46 @@
+{% extends '::layout.html.twig' %}
+
+{% block contenido %}
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+        <h1>Docente</h1>
+
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th>Id</th>
+                    <td>{{ user.id }}</td>
+                </tr>
+                <tr>
+                    <th>Nombre de usuario</th>
+                    <td>{{ user.username }}</td>
+                </tr>
+                <tr>
+                    <th>Cedula</th>
+                    <td>{{ user.cedula }}</td>
+                </tr>
+                <tr>
+                    <th>Nombre</th>
+                    <td>{{ user.nombre }}</td>
+                </tr>
+                <tr>
+                    <th>Apellido</th>
+                    <td>{{ user.apellido }}</td>
+                </tr>
+                    <th>Proyectos</th>
+                    <td>
+                        {% for proyecto in user.proyectos %}
+                            {{ proyecto.id }} {{ proyecto.nombre }} <br>    
+                        {% endfor %}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        
+        {{ form_start(delete_form) }}
+            <a href="{{ path('user_index') }}" class="btn btn-info">Vover</a>
+            <a href="{{ path('user_edit', { 'id': user.id }) }}" class="btn btn-success">Editar</a>
+            <input type="submit" value="Eliminar" class="btn btn-danger">
+        {{ form_end(delete_form) }}
+    </div>
+    
+{% endblock %}

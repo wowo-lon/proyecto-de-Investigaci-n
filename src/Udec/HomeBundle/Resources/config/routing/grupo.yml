@@ -1,0 +1,24 @@
+grupo_index:
+    path:     /
+    defaults: { _controller: "UdecHomeBundle:Grupo:index" }
+    methods:  GET
+
+grupo_show:
+    path:     /{id}/show
+    defaults: { _controller: "UdecHomeBundle:Grupo:show" }
+    methods:  GET
+
+grupo_new:
+    path:     /new
+    defaults: { _controller: "UdecHomeBundle:Grupo:new" }
+    methods:  [GET, POST]
+
+grupo_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "UdecHomeBundle:Grupo:edit" }
+    methods:  [GET, POST]
+
+grupo_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "UdecHomeBundle:Grupo:delete" }
+    methods:  DELETE

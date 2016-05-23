@@ -1,0 +1,19 @@
+Udec\HomeBundle\Entity\Rol:
+    type: entity
+    table: null
+    repositoryClass: Udec\HomeBundle\Repository\RolRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    oneToMany:
+        users: 
+            targetEntity: User
+            mappedBy: Rol
+    fields:
+        name:
+            type: string
+            length: '10'
+    lifecycleCallbacks: {  }

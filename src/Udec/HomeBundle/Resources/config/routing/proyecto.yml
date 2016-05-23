@@ -1,0 +1,54 @@
+proyecto_index:
+    path:     /
+    defaults: { _controller: "UdecHomeBundle:Proyecto:index" }
+    methods:  GET
+
+proyecto_show:
+    path:     /{id}/show
+    defaults: { _controller: "UdecHomeBundle:Proyecto:show" }
+    methods:  GET
+
+proyecto_new:
+    path:     /new
+    defaults: { _controller: "UdecHomeBundle:Proyecto:new" }
+    methods:  [GET, POST]
+
+proyecto_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "UdecHomeBundle:Proyecto:edit" }
+    methods:  [GET, POST]
+
+proyecto_edit_index:
+    path:     /{id}/editarIndex
+    defaults: { _controller: "UdecHomeBundle:Proyecto:editarIndex" }
+    methods:  [GET, POST]
+
+proyecto_editar_documento:
+    path:     /{id}/editarDocumento
+    defaults: { _controller: "UdecHomeBundle:Proyecto:editarDocumento" }
+    methods:  [GET, POST]
+
+proyecto_editar_aportes:
+    path:     /{id}/Aportes
+    defaults: { _controller: "UdecHomeBundle:Proyecto:entregas" }
+    methods:  [GET, POST]
+
+proyecto_agregar_aporte:
+    path:     /{id}/nuevoAporte
+    defaults: { _controller: "UdecHomeBundle:Proyecto:newAporte" }
+    methods:  [GET, POST]
+
+proyecto_delete_aporte:
+    path:     /{id}/EliminarAporte
+    defaults: { _controller: "UdecHomeBundle:Proyecto:deleteAporte" }
+    methods:  GET
+
+proyecto_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "UdecHomeBundle:Proyecto:delete" }
+    methods:  DELETE
+
+proyecto_buscar:
+    path:     /buscarProyectos
+    defaults: { _controller: "UdecHomeBundle:Proyecto:buscarProyectos" }
+    methods:  [GET, POST]

@@ -1,0 +1,4 @@
+services:
+#    udec_home.example:
+#        class: Udec\HomeBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]

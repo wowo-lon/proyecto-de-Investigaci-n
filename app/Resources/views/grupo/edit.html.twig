@@ -1,0 +1,18 @@
+{% extends '::layout.html.twig' %}
+
+{% block contenido %}
+    <div class="col-xs-12 col-sm-12 col-md-8 col-lg-6">
+        <h1>Editar Grupo de investigacion</h1>
+
+        {{ form_start(edit_form) }}
+            {{ form_widget(edit_form) }}
+            <input type="submit" value="Actualizar"  class="btn btn-success"/>
+        {{ form_end(edit_form) }}
+
+        <br>
+        {{ form_start(delete_form) }}
+            <a href="{{ path('grupo_index') }}" class="btn btn-info">Volver</a>
+            <input type="submit" value="Eliminar" class="btn btn-danger">
+        {{ form_end(delete_form) }}
+    </div>
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends '::layout.html.twig' %}
+
+{% block contenido %}
+    <h1>Proyectos</h1>
+    <div class="col-md-2 col-lg-4">
+        
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+        <form action="{{ path('proyecto_buscar') }}" method="POST" role="form">
+            <div class="form-group">
+                <input type="text" class="form-control" id="" placeholder="Escribe el Titulo del proyecto" name="busqueda">
+            </div>
+            <button type="submit" class="btn btn-info">Buscar</button>
+        </form>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <a href="{{ path('proyecto_new') }}" class="btn btn-primary">Nuevo proyecto</a>
+    
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Fecha inicio</th>
+                    <th>Nombre</th>
+                    <th>Resumen</th>
+                    <th>Documento</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for proyecto in proyectos %}
+                <tr>
+                    <td><a href="{{ path('proyecto_show', { 'id': proyecto.id }) }}">{{ proyecto.id }}</a></td>
+                    <td>{% if proyecto.fechaInicio %}{{ proyecto.fechaInicio|date('Y-m-d') }}{% endif %}</td>
+                    <td>{{ proyecto.nombre }}</td>
+                    <td>{{ proyecto.resumen }}</td>
+                    <td>{{ proyecto.documento }}</td>
+                    <td>
+                        <a href="{{ path('proyecto_show', { 'id': proyecto.id }) }}" class="btn btn-info">Detalles</a>
+                        <a href="{{ path('proyecto_edit_index', { 'id': proyecto.id }) }}" class="btn btn-success">Editar</a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    
+{% endblock %}

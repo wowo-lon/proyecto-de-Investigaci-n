@@ -1,0 +1,24 @@
+udec_home_user:
+    resource: "@UdecHomeBundle/Resources/config/routing/user.yml"
+    prefix:   /users
+
+udec_home_homepage:
+    path:     /
+    defaults: { _controller: UdecHomeBundle:Default:index }
+
+udec_home_semillero:
+    resource: "@UdecHomeBundle/Resources/config/routing/semillero.yml"
+    prefix:   /semilleros
+
+udec_home_lineaInvestigacion:
+    resource: "@UdecHomeBundle/Resources/config/routing/lineainvestigacion.yml"
+    prefix:   /lineas
+
+udec_home_grupo:
+    resource: "@UdecHomeBundle/Resources/config/routing/grupo.yml"
+    prefix:   /grupos
+
+udec_home_proyecto:
+    resource: "@UdecHomeBundle/Resources/config/routing/proyecto.yml"
+    prefix:   /proyectos
+

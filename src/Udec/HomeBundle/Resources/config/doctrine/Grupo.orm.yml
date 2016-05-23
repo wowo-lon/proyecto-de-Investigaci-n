@@ -1,0 +1,55 @@
+Udec\HomeBundle\Entity\Grupo:
+    type: entity
+    table: null
+    repositoryClass: Udec\HomeBundle\Repository\GrupoRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    oneToOne:
+        lider:
+            targetEntity: User
+            inversedBy: grupo
+            joinColumn:
+                name: idDocente
+                referencedColumnName: id
+    oneToMany:
+        semilleros:
+            targetEntity: Semillero
+            mappedBy: Grupo
+
+    manyToMany:
+        LineasInvestigacion:
+            targetEntity: LineaInvestigacion
+            inversedBy: grupos
+            joinTable:
+                name: grupo_linea
+                joinColumns:
+                    idGrupo:
+                        referencedColumnName: id
+                inverseJoinColumns:
+                    IdLinea:
+                        referencedColumnName: id
+        integrantes:
+            targetEntity: User
+            inversedBy: grupos
+            joinTable:
+                name: integrantes_grupo
+                joinColumns:
+                    idGrupo:
+                        referencedColumnName: id
+                inverseJoinColumns:
+                    IdProfesor:
+                        referencedColumnName: id
+    fields:
+        nombre:
+            type: string
+            length: '100'
+        fechaInicio:
+            type: date
+            column: fecha_inicio
+        estado:
+            type: boolean
+    lifecycleCallbacks: {  }

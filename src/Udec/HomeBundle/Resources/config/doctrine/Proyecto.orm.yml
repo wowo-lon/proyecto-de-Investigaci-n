@@ -1,0 +1,49 @@
+Udec\HomeBundle\Entity\Proyecto:
+    type: entity
+    table: null
+    repositoryClass: Udec\HomeBundle\Repository\ProyectoRepository
+    properties:
+        documento:
+            - File:
+                maxSize: 1024M
+                mimeTypes: [application/pdf, application/x-pdf]
+                mimeTypesMessage: Please upload a valid PDF
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    manyToMany:
+        participantes:
+            targetEntity: User
+            joinTable:
+                name: user_proyecto
+                joinColumn:
+                    proyecto_id:
+                        referencedColumnName: id
+                inverseJoinColumns:
+                    user_id:
+                        referencedColumnName: id
+    manyToOne:
+        director:
+            targetEntity: User
+            mappedBy: proyectos
+            joinColumn:
+                name: director_id
+                referencedColumnName: id
+    oneToMany:
+        aportes:
+            targetEntity: Aporte
+            mappedBy: Proyecto
+    fields:
+        fechaInicio:
+            type: date
+        nombre:
+            type: string
+            length: '255'
+        resumen:
+            type: text
+        documento:
+            type: text
+    lifecycleCallbacks: {  }

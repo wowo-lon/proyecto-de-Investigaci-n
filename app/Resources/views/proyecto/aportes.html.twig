@@ -1,0 +1,30 @@
+{% extends '::layout.html.twig' %}
+
+{% block contenido %}
+    <h1>Aportes al Proyecto {{ proyecto.nombre }}</h1>
+    
+    <div class="col-md-2 col-lg-4">
+        
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+        <table class="table table-hover">
+            <tr>
+                <th>Titulo</th>
+                <th>Resumen</th>
+                <th>Archio</th>
+                <th></th>
+            </tr>
+            {% for aporte in aportes %}
+                <tr>
+                    <td>{{ aporte.titulo }}</td>
+                    <td>{{ aporte.resumen }}</td>
+                    <td><a href="{{ asset(proyecto.getWebPath) }}">{{ aporte.documento }}</a></td>
+                    <td><a href="{{ path('proyecto_delete_aporte', { id: aporte.id }) }}" class="btn btn-danger">Eliminar</a></td>
+                </tr>
+            {% endfor %}
+        </table>
+        <a href="{{ path('proyecto_agregar_aporte', {id: proyecto.id }) }}" class="btn btn-primary">Agregar</a>
+        <a href="{{ path('proyecto_edit_index', { 'id': proyecto.id }) }}" class="btn btn-danger">Volver</a>
+        
+    </div>
+{% endblock %}

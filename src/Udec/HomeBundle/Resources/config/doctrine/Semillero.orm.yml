@@ -1,0 +1,23 @@
+Udec\HomeBundle\Entity\Semillero:
+    type: entity
+    table: null
+    repositoryClass: Udec\HomeBundle\Repository\SemilleroRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+
+    manyToOne:
+        grupo:
+            targetEntity: Grupo
+            inversedBy: semilleros
+            joinColumn:
+                name: idGrupo
+                referencedColumnName: id
+    fields:
+        nombre:
+            type: string
+            length: '150'
+    lifecycleCallbacks: {  }

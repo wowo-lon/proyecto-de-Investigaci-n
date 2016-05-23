@@ -1,0 +1,36 @@
+Udec\HomeBundle\Entity\User:
+    type: entity
+    repositoryClass: Udec\HomeBundle\Repository\UserRepository
+    table: fos_user
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+
+    oneToOne:
+        grupo:
+            targetEntity: Grupo
+            mappedBy: lider
+    oneToMany:
+        proyectos:
+            targetEntity: Proyecto
+            mappedBy: director
+    manyToMany:
+        proyectosParticipa:
+            targetEntity: Proyecto
+            mappedBy: participantes
+        grupos:
+            targetEntity: Grupo
+            mappedBy: LineasInvestigacion
+    fields:
+        cedula:
+            type: string
+            length: '100'
+        nombre:
+            type: string
+            length: '100'
+        apellido:
+            type: string
+            length: '100'
+    lifecycleCallbacks: {  }

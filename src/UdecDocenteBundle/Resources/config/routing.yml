@@ -1,0 +1,16 @@
+udec_docente_homepage:
+    path:     /
+    defaults: { _controller: UdecDocenteBundle:Default:index }
+
+udec_docente_gruposLider:
+    path:     /gruposLider
+    defaults: { _controller: UdecDocenteBundle:Docente:index }
+
+udec_docente_Proyectos:
+    path:     /proyectosDocente
+    defaults: { _controller: UdecDocenteBundle:Docente:proyectos }
+
+udec_docente_grupo:
+    path:     /grupo/{id}
+    methods:  GET
+    defaults: { _controller: UdecDocenteBundle:Docente:showGrupo }
